@@ -96,8 +96,8 @@ private:
   }
 
   float findDistance(float x1, float y1, GPoint p2) {
-    return sqrt(pow(p2.x - x1, 2) + pow(p2.y - y1, 2));
+    return sqrt(pow(p2.x - x1, 2.f) + pow(p2.y - y1, 2.f));
   }
-}
+};
 
 #endif //GSHADER_VORONOI_H
