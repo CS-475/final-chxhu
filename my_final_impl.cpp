@@ -3,7 +3,8 @@
  */
 
 #include "include/GFinal.h"
+#include "GFinal_Limited.h"
 
 std::unique_ptr<GFinal> GCreateFinal() {
- return std::unique_ptr<GFinal>(new GFinal());
+ return std::unique_ptr<GFinal>(new GFinal_Limited());
 }
