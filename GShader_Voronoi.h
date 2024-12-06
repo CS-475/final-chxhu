@@ -24,7 +24,7 @@ public:
       int r = (int) std::round(colors[i].r * 255);
       int g = (int) std::round(colors[i].g * 255);
       int b = (int) std::round(colors[i].b * 255);
-      pixel.push_back(GPixel_PackARGB(a, r, g, b));
+      pixel[i] = GPixel_PackARGB(a, r, g, b);
     }
   }
 
