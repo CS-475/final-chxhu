@@ -122,8 +122,8 @@ private:
   }
 
   int findPosIndex(float ix) {
-    int left = num;
-    int right = num / 2;
+    int left = 0;
+    int right = num;
     while (right > left + 1) {
       int mid = left + (right - left) / 2;
       if (position[mid] > ix) {

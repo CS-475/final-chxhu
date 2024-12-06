@@ -7,6 +7,7 @@
 
 #include "include/GFinal.h"
 #include "GShader_Gradient1.h"
+#include "GShader_Gradient2.h"
 #include "GShader_Voronoi.h"
 #include "GShader_PosGradient.h"
 
@@ -36,6 +37,8 @@ public:
                                                              int count) {
         if (count == 1) {
             return std::make_shared<GShader_Gradient1>(p0, p1, colors, count);
+        } else if (count == 2) {
+           return std::make_shared<GShader_Gradient2>(p0, p1, colors, count, GTileMode::kClamp);
         } else {
             return std::make_shared<GShader_PosGradient>(p0, p1, colors, pos, count);
         }
