@@ -7,6 +7,7 @@
 
 #include "include/GShader.h"
 #include "include/GMatrix.h"
+#include <iostream>
 
 class GShader_PosGradient : public GShader {
 public:
@@ -66,6 +67,7 @@ public:
         int lesserIndex = findPosIndex(ix);
         float lesserPos = position[lesserIndex];
         float t = (ix - lesserPos) * positionDiff[lesserIndex];
+        std::cout << "t: " << t << "\n";
         // Color Calculation
         GColor newColor = color[lesserIndex] + colorDiff[lesserIndex]*t;
         // GColor --> GPixel
@@ -85,6 +87,7 @@ public:
         int lesserIndex = findPosIndex(ix);
         float lesserPos = position[lesserIndex];
         float t = (ix - lesserPos) * positionDiff[lesserIndex];
+        std::cout << "t: " << t << "\n";
         // Color Calculation
         GColor newColor = color[lesserIndex] + colorDiff[lesserIndex]*t;
         // GColor --> GPixel
@@ -129,6 +132,7 @@ private:
         left = mid;
       }
     }
+    std::cout << "Index, Position: " << left << ", " << position[left] << "\n";
     return left;
   }
 };
