@@ -14,6 +14,7 @@ public:
     contextMatrix = GMatrix();
     invMatrix = GMatrix();
     point.assign(points, points + count);
+    pixel.resize(count);
     opaque = true;
     for (int i = 0; i < count; i++) {
       if (colors[i].a <= 0.9981f) {
@@ -71,8 +72,6 @@ public:
       }
     }
   }
-
-
 
 private:
   GMatrix contextMatrix;
