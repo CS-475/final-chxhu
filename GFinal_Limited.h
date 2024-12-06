@@ -8,6 +8,7 @@
 #include "include/GFinal.h"
 #include "GShader_Gradient1.h"
 #include "GShader_Voronoi.h"
+#include "GShader_PosGradient.h"
 
 
 class GFinal_Limited : public GFinal {
@@ -33,7 +34,11 @@ public:
                                                              const GColor colors[],
                                                              const float pos[],
                                                              int count) {
-        return nullptr;
+        if (count == 1) {
+            return std::make_shared<GShader_Gradient1>(p0, p1, colors, count);
+        } else {
+            return std::make_shared<GShader_PosGradient>(p0, p1, colors, pos, count);
+        }
     }
 
     virtual std::shared_ptr<GShader> createColorMatrixShader(const GColorMatrix&,
